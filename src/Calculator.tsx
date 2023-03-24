@@ -1,4 +1,4 @@
-import { ButtonContainer, ButtonContainerDown, Input } from "./components/styles"
+import { ButtonContainer, Input } from "./components/styles"
 import { Button, ButtonGrenn, ButtonRed, ContainerCalc, Header } from "./styles"
 import seta from './assets/seta.svg';
 
@@ -8,7 +8,7 @@ export const Calculator = () => {
     <>
       <ContainerCalc>
         <Header>
-          Calculadora Univas
+          Calculadora Univas ES4
         </Header>
 
         <Input>
