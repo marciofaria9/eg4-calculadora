@@ -1,11 +1,13 @@
+/* eslint-disable react/react-in-jsx-scope */
 import './App.css';
-import { Calculator } from './Calculator';
+
+import { Calc } from './components/calculator';
 
 function App() {
 
   return (
     <div>
-     <Calculator />
+     <Calc />
     </div>
   )
 }

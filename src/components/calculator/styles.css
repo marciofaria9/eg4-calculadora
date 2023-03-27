@@ -1,0 +1,46 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(to right, "#BD5757", "#606060")
+}
+
+.calculator-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 6rem);
+  grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+}
+
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 1.6rem;
+  color: white;
+  outline: none;
+}
+
+.calculator-grid > button:hover, 
+.calculator-grid > button:focus {
+
+} 
+
+.span-two {
+  grid-row: span 3;
+}
+
+.output {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 1rem;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.current-operand {
+  color: 'black';
+  font-size: 2.5rem
+}
