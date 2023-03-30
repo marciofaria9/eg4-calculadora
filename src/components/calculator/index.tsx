@@ -7,22 +7,21 @@ export const Calc = () => {
     const [acumul, setAcumul] = useState(0)
     const [operacao, setOperacao] = useState(false)
 
-    const addDigitTela = (d: any) => {
-      if ((d == '+' || d == '-' || d == '*' || d == '/') && operacao) {
-        setOperacao(false)
-        setValorTela(result + d)
-        return
+    const addDigitTela = (d: string) => {
+      if (['+', '-', '*', '/'].includes(d)) {
+        if (operacao) {
+          setValorTela(`${result}${d}`);
+        } else if (valorTela !== '') {
+          const valorDigitadoTela = `${valorTela}${d}`;
+          setValorTela(valorDigitadoTela);
+        }
+        setOperacao(true);
+      } else {
+        const valorDigitadoTela = `${valorTela}${d}`;
+        setValorTela(valorDigitadoTela);
+        setOperacao(false);
       }
-
-      if (operacao) {
-        setValorTela(d) 
-        setOperacao(false) 
-        return
-      }
-
-      const valorDigitadoTela = valorTela + d
-      setValorTela(valorDigitadoTela)
-    }
+    };
 
     const limparMemor = () => {
       setOperacao(false)
