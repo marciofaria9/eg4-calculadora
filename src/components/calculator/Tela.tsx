@@ -1,4 +1,4 @@
-
+import React from 'react';
 
 export const Tela = (valor: any, res: any) => {
     return (
