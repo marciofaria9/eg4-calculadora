@@ -15,7 +15,7 @@ body {
 
 .calculator-grid > button {
   cursor: pointer;
-  font-size: 1.6rem;
+  font-size: 1.57rem;
   color: white;
   outline: none;
 }
@@ -26,7 +26,7 @@ body {
 } 
 
 .span-two {
-  grid-row: span 3;
+  grid-row: span 2;
 }
 
 .output {

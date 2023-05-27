@@ -8,8 +8,11 @@ export const Calc = () => {
     const [result, setResult] = useState(0)
     const [acumul, setAcumul] = useState(0)
     const [operacao, setOperacao] = useState(false)
+    const [valor1, setValor1] = useState(0)
+    
 
     const addDigitTela = (d: string) => {
+
       if (['+', '-', '*', '/'].includes(d)) {
         if (operacao) {
           setValorTela(`${result}${d}`);
@@ -22,7 +25,8 @@ export const Calc = () => {
         const valorDigitadoTela = `${valorTela}${d}`;
         setValorTela(valorDigitadoTela);
         setOperacao(false);
-      }
+      }      
+      console.log(valorTela);
     };
 
     const limparMemor = () => {
@@ -52,6 +56,39 @@ export const Calc = () => {
        setResult(parseInt('ERRO'));
       }
     }
+  
+
+    const populaValor1 = () => {
+      const valor1Int = parseInt(valorTela)
+      setValor1(valor1Int)
+      setValorTela('')      
+      console.log(valor1Int)
+    }
+
+    const populaValor2 = (operator: string) =>{
+      const valor2Int = parseInt(valorTela)
+      setValorTela('')      
+      console.log(valor2Int)
+      calculaResultado(operator, valor2Int)
+    }
+
+    const calculaResultado = (operator: string, valor2: number) => {
+      let resultado;
+      
+      if (operator == '+'){
+        resultado = valor1+valor2 
+      }else if (operator == '-'){
+        resultado = valor1-valor2
+      }else if (operator == '*'){
+        resultado = valor1 * valor2
+      }else{
+        resultado = valor1 / valor2
+      }
+
+      const resultadoTela = resultado.toString()
+
+      setValorTela(resultadoTela)
+    }
 
   return (
     <div 
@@ -76,19 +113,19 @@ export const Calc = () => {
 
       <button
          style={{ backgroundColor: '#606060' }}
-         onClick={() => addDigitTela('+')}
+         onClick={() => populaValor2('+')}
       > + </button>
       <button 
         style={{ backgroundColor: '#606060' }}
-        onClick={() => addDigitTela('-')}
+        onClick={() => populaValor2('-')}
       > - </button>
       <button 
         style={{ backgroundColor: '#606060' }}
-        onClick={() => addDigitTela('*')}  
+        onClick={() => populaValor2('*')}  
       > X </button>
       <button 
         style={{ backgroundColor: '#606060' }}
-        onClick={() => addDigitTela('/')}  
+        onClick={() => populaValor2('/')}  
       > / </button>
 
       <button
@@ -126,8 +163,12 @@ export const Calc = () => {
       <button 
         className="span-two" 
         style={{ backgroundColor:'#437B3E' }}
-        onClick={() => operation('=')}
-      > = </button>
+        onClick={() => populaValor1()}
+      > E
+        N
+        T
+        E
+        R </button>
 
       <button 
         style={{ backgroundColor: '#606060' }}
@@ -154,6 +195,11 @@ export const Calc = () => {
         style={{ backgroundColor: '#BD5757' }}
         onClick={limparMemor}
       > CE </button>
+      <button 
+        style={{ backgroundColor: '#BD5757' }}
+        onClick={limparMemor}
+      > F </button>
+
 
     </div>
   )
