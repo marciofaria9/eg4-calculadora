@@ -105,102 +105,161 @@ export const Calc = () => {
           style={{ fontSize: '35px', color: 'white' }}>
           {valorTela} 
         </div>
-        <div 
-          style={{ fontSize: '45px', color: 'white' }}>
-          {result}
-        </div>
+       
       </div>
+        <button
+          style={{ backgroundColor: '#606060' }}
+          > n </button>
+        <button
+          style={{ backgroundColor: '#606060' }}
+        > i </button>
+        <button
+          style={{ backgroundColor: '#606060' }}
+        > PV </button>
+        <button
+          style={{ backgroundColor: '#606060' }}
+        > PMT </button>
+        <button
+          style={{ backgroundColor: '#606060' }}
+        > FV </button>
+        <button
+        style={{ backgroundColor: '#606060' }}
+        > CHS </button>
+        <button
+          style={{ backgroundColor: '#606060' }}
+          onClick={() => addDigitTela('7')}
+        > 7 </button>
+        <button 
+          style={{ backgroundColor: '#606060' }}
+          onClick={() => addDigitTela('8')}  
+        > 8 </button>
+        <button 
+          style={{ backgroundColor: '#606060' }}
+          onClick={() => addDigitTela('9')}  
+        > 9 </button>
+          <button 
+          style={{ backgroundColor: '#606060' }}
+          onClick={() => populaValor2('/')}  
+        > ÷ </button>
+      
 
-      <button
-         style={{ backgroundColor: '#606060' }}
-         onClick={() => populaValor2('+')}
-      > + </button>
-      <button 
-        style={{ backgroundColor: '#606060' }}
-        onClick={() => populaValor2('-')}
-      > - </button>
-      <button 
-        style={{ backgroundColor: '#606060' }}
-        onClick={() => populaValor2('*')}  
-      > X </button>
-      <button 
-        style={{ backgroundColor: '#606060' }}
-        onClick={() => populaValor2('/')}  
-      > / </button>
-
-      <button
-        style={{ backgroundColor: '#606060' }}
-        onClick={() => addDigitTela('7')}
-      > 7 </button>
-      <button 
-        style={{ backgroundColor: '#606060' }}
-        onClick={() => addDigitTela('8')}  
-      > 8 </button>
-      <button 
-        style={{ backgroundColor: '#606060' }}
-        onClick={() => addDigitTela('9')}  
-      > 9 </button>
-      <button style={{ 
-        fontSize: '50px', 
-        padding: '0px 0px 15px 5px', 
-        backgroundColor: '#BD5757' }}
-        onClick={() => operation('bs')}  > 
-          &larr; 
-      </button>
-
-      <button 
-        style={{ backgroundColor: '#606060' }}
-        onClick={() => addDigitTela('4')}  
-      > 4 </button>
-      <button 
-        style={{ backgroundColor: '#606060' }}
-        onClick={() => addDigitTela('5')}
-      > 5 </button>
-      <button 
-        style={{ backgroundColor: '#606060' }}
-        onClick={() => addDigitTela('6')}  
-      > 6 </button>
-      <button 
-        className="span-two" 
-        style={{ backgroundColor:'#437B3E' }}
-        onClick={() => populaValor1()}
-      > E
-        N
-        T
-        E
-        R </button>
-
-      <button 
-        style={{ backgroundColor: '#606060' }}
-        onClick={() => addDigitTela('1')}
-        > 1 </button>
-      <button 
-        style={{ backgroundColor: '#606060' }}
-        onClick={() => addDigitTela('2')}
-      > 2 </button>
-      <button 
-        style={{ backgroundColor: '#606060' }}
-        onClick={() => addDigitTela('3')}
-      > 3 </button>
-
-      <button 
-        style={{ backgroundColor: '#606060' }}
-        onClick={() => addDigitTela('0')}
-      > 0 </button>
-      <button 
-        style={{ backgroundColor: '#606060' }} 
-        onClick={() => addDigitTela('.')}
-      > . </button>
-      <button 
-        style={{ backgroundColor: '#BD5757' }}
-        onClick={limparMemor}
-      > CE </button>
-      <button 
-        style={{ backgroundColor: '#BD5757' }}
-        onClick={limparMemor}
-      > F </button>
+        <button
+          style={{ backgroundColor: '#606060' }}
+        > Y^x </button>
+        <button
+          style={{ backgroundColor: '#606060' }}
+        > 1/x </button>
+        <button
+          style={{ backgroundColor: '#606060' }}
+        > %T </button>
+        <button
+          style={{ backgroundColor: '#606060' }}
+        > Δ% </button>
+        <button
+          style={{ backgroundColor: '#606060' }}
+        > % </button>
+        <button
+          style={{ backgroundColor: '#606060' }}
+        > EEX </button>
+        <button 
+          style={{ backgroundColor: '#606060' }}
+          onClick={() => addDigitTela('4')}  
+        > 4 </button>
+        <button 
+          style={{ backgroundColor: '#606060' }}
+          onClick={() => addDigitTela('5')}
+        > 5 </button>
+        <button 
+          style={{ backgroundColor: '#606060' }}
+          onClick={() => addDigitTela('6')}  
+        > 6 </button>
+        <button 
+          style={{ backgroundColor: '#606060' }}
+          onClick={() => populaValor2('*')}  
+        > X </button>   
 
 
-    </div>
+        <button
+          style={{ backgroundColor: '#606060' }}
+        > R/S </button>
+        <button
+          style={{ backgroundColor: '#606060' }}
+        > SST </button>
+        <button
+          style={{ backgroundColor: '#606060' }}
+        > R∇ </button>
+        <button
+          style={{ backgroundColor: '#606060' }}
+        > x y </button>
+        <button 
+          style={{ backgroundColor: '#BD5757' }}
+          onClick={limparMemor}
+        > CLX </button>
+        <button 
+                className="span-two" 
+                style={{ backgroundColor:'#437B3E' }}
+                onClick={() => populaValor1()}
+              > E
+                N
+                T
+                E
+                R </button>
+        <button 
+          style={{ backgroundColor: '#606060' }}
+          onClick={() => addDigitTela('1')}
+          > 1 </button>
+        <button 
+          style={{ backgroundColor: '#606060' }}
+          onClick={() => addDigitTela('2')}
+        > 2 </button>
+        <button 
+          style={{ backgroundColor: '#606060' }}
+          onClick={() => addDigitTela('3')}
+        > 3 </button>
+        <button 
+          style={{ backgroundColor: '#606060' }}
+          onClick={() => populaValor2('-')}
+        > - </button>
+
+
+        
+        <button
+          style={{ backgroundColor: '#606060' }}
+        > ON </button>
+        <button 
+          style={{ backgroundColor: '#F77F43' }}
+          onClick={limparMemor}
+        > f </button>
+        <button
+          style={{ backgroundColor: '#5B51E6' }}
+        > g </button>
+        <button
+          style={{ backgroundColor: '#606060' }}
+        > STO </button>
+        <button
+          style={{ backgroundColor: '#606060' }}
+        > RCL </button>
+        <button 
+          style={{ backgroundColor: '#606060' }}
+          onClick={() => addDigitTela('0')}
+        > 0 </button>
+        <button 
+          style={{ backgroundColor: '#606060' }} 
+          onClick={() => addDigitTela('.')}
+        > . </button>
+        <button style={{ 
+              fontSize: '50px', 
+              padding: '0px 0px 15px 5px', 
+              backgroundColor: '#BD5757' }}
+              onClick={() => operation('bs')}  > 
+                &larr; 
+            </button>
+        <button
+          style={{ backgroundColor: '#606060' }}
+          onClick={() => populaValor2('+')}
+        > + </button>    
+     
+
+      </div>
   )
 }
