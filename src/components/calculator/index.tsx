@@ -10,7 +10,8 @@ export const Calc = () => {
     const [operacao, setOperacao] = useState(false)
     const [valor1, setValor1] = useState(0)
     
-
+    const [lastButtonPressed, setLastButtonPressed] = useState('');
+    
     const addDigitTela = (d: string) => {
 
       if (['+', '-', '*', '/'].includes(d)) {
@@ -35,7 +36,14 @@ export const Calc = () => {
       setResult(0)
       setAcumul(0)
       return
-    }
+    } 
+
+    const handleButtonClick = (button: string) => {
+      if (lastButtonPressed === 'f' && button === 'CLX') {
+        limparMemor();
+      }
+      setLastButtonPressed(button);
+    };
 
     const operation = (op: any) => {
         //backspace
@@ -71,6 +79,7 @@ export const Calc = () => {
       console.log(valor2Int)
       calculaResultado(operator, valor2Int)
     }
+
 
     const calculaResultado = (operator: string, valor2: number) => {
       let resultado;
@@ -191,10 +200,12 @@ export const Calc = () => {
         <button
           style={{ backgroundColor: '#606060' }}
         > x y </button>
-        <button 
-          style={{ backgroundColor: '#BD5757' }}
-          onClick={limparMemor}
-        > CLX </button>
+       <button
+        style={{ backgroundColor: '#BD5757' }}
+        onClick={() => handleButtonClick('CLX')}
+      >
+        CLX
+      </button>
         <button 
                 className="span-two" 
                 style={{ backgroundColor:'#437B3E' }}
@@ -226,10 +237,12 @@ export const Calc = () => {
         <button
           style={{ backgroundColor: '#606060' }}
         > ON </button>
-        <button 
-          style={{ backgroundColor: '#F77F43' }}
-          onClick={limparMemor}
-        > f </button>
+         <button
+        style={{ backgroundColor: '#F77F43' }}
+        onClick={() => handleButtonClick('f')}
+      >
+        f
+      </button>
         <button
           style={{ backgroundColor: '#5B51E6' }}
         > g </button>
