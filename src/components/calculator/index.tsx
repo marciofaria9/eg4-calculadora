@@ -9,7 +9,8 @@ export const Calc = () => {
     const [acumul, setAcumul] = useState(0)
     const [operacao, setOperacao] = useState(false)
     const [valor1, setValor1] = useState(0)
-    
+    const [f, setF] = useState(false)
+
     const [lastButtonPressed, setLastButtonPressed] = useState('');
     
     const addDigitTela = (d: string) => {
@@ -30,21 +31,29 @@ export const Calc = () => {
       console.log(valorTela);
     };
 
+    const handleF = ()=>{
+      setF(true);
+    }
+
+    const logicaClx = ()=>{
+      if (f){
+        limparMemor()
+      }else{
+        setValorTela('')
+      }
+    }
+
     const limparMemor = () => {
       setOperacao(false)
       setValorTela('')
       setResult(0)
       setAcumul(0)
+      setValor1(0)
+      setF(false)
       return
     } 
 
-    const handleButtonClick = (button: string) => {
-      if (lastButtonPressed === 'f' && button === 'CLX') {
-        limparMemor();
-      }
-      setLastButtonPressed(button);
-    };
-
+    
     const operation = (op: any) => {
         //backspace
       if (op == 'bs') {
@@ -202,7 +211,7 @@ export const Calc = () => {
         > x y </button>
        <button
         style={{ backgroundColor: '#BD5757' }}
-        onClick={() => handleButtonClick('CLX')}
+        onClick={logicaClx}
       >
         CLX
       </button>
@@ -239,7 +248,7 @@ export const Calc = () => {
         > ON </button>
          <button
         style={{ backgroundColor: '#F77F43' }}
-        onClick={() => handleButtonClick('f')}
+        onClick={handleF}
       >
         f
       </button>
