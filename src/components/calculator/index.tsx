@@ -9,6 +9,8 @@ export const Calc = () => {
     const [acumul, setAcumul] = useState(0)
     const [operacao, setOperacao] = useState(false)
     const [valor1, setValor1] = useState(0)
+    //TODO
+    const [f, setF] =useState(false)
     
 
     const addDigitTela = (d: string) => {
@@ -29,11 +31,21 @@ export const Calc = () => {
       console.log(valorTela);
     };
 
+    const logicaClx = () => {
+      if (f){
+        limparMemor();
+        setF(false)
+      }else {
+        limpaValorTela()
+      }
+    }
+
     const limparMemor = () => {
       setOperacao(false)
       setValorTela('')
       setResult(0)
       setAcumul(0)
+      setValor1(0)
       return
     }
 
@@ -57,6 +69,13 @@ export const Calc = () => {
       }
     }
   
+    const limpaValorTela = () => {
+      setValorTela("")
+    }
+
+    const handleF = ()=>{
+      setF(true);
+    }
 
     const populaValor1 = () => {
       const valor1Int = parseInt(valorTela)
@@ -193,7 +212,7 @@ export const Calc = () => {
         > x y </button>
         <button 
           style={{ backgroundColor: '#BD5757' }}
-          onClick={limparMemor}
+          onClick={logicaClx}
         > CLX </button>
         <button 
                 className="span-two" 
@@ -228,7 +247,7 @@ export const Calc = () => {
         > ON </button>
         <button 
           style={{ backgroundColor: '#F77F43' }}
-          onClick={limparMemor}
+          onClick={handleF}
         > f </button>
         <button
           style={{ backgroundColor: '#5B51E6' }}
