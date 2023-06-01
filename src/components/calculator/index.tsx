@@ -73,15 +73,15 @@ export const Calc = () => {
   
 
     const populaValor1 = () => {
-      const valor1Int = parseInt(valorTela)
+      const valor1Int = parseFloat(valorTela)
       setValor1(valor1Int)
       setValorTela('0')      
       console.log(valor1Int)
     }
 
     const populaValor2 = (operator: string) =>{
-      const valor2Int = parseInt(valorTela)
-      setValorTela('')      
+      const valor2Int = parseFloat(valorTela)
+      setValorTela('0')      
       console.log(valor2Int)
       calculaResultado(operator, valor2Int)
     }
@@ -132,7 +132,7 @@ export const Calc = () => {
           style={{ backgroundColor: '#606060' }}
         > PV </button>
         <button
-          style={{ backgroundColor: '#606060', opacity:0.35, cursor: 'no-drop' }}
+          style={{ backgroundColor: '#606060' }}
         > PMT </button>
         <button
           style={{ backgroundColor: '#606060' }}
