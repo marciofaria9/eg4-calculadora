@@ -13,7 +13,7 @@ export const Calc = () => {
     const [PV, setPV] = useState(0)
     const [n, setN] = useState(0)
     const [i, setI] = useState(0)
-    const [FV, setFV] = useState(0)
+    const [CHS, setCHS] = useState(false)
 
     const [lastButtonPressed, setLastButtonPressed] = useState('');
     
@@ -33,7 +33,12 @@ export const Calc = () => {
     };
 
     const handleF = ()=>{
-      setF(true);
+      if(f){
+        setF(false)
+      }else{
+         setF(true);
+      }
+     
     }
 
     const logicaClx = ()=>{
@@ -53,13 +58,18 @@ export const Calc = () => {
       setPV(0)
       setN(0)
       setI(0)
-      setFV(0)
       setF(false)
+      setCHS(false)
       return
     } 
 
     const populaPV = () =>{
-      const valorPV = parseFloat(valorTela)
+      let valorPV      
+      if(CHS){        
+         valorPV = parseFloat(valorTela.substring(1))      
+      }else{
+        valorPV = parseFloat(valorTela)
+      }      
       setPV(valorPV)
       console.log(valorPV)
       setValorTela('0') 
@@ -77,6 +87,16 @@ export const Calc = () => {
       setN(valorN)
       console.log(valorN)
       setValorTela('0') 
+    }
+
+    const handleCHS = () => {
+      if(CHS){
+        setCHS(false)
+        setValorTela(valorTela.substring(1))
+      }else{
+         setCHS(true);
+         setValorTela('-' + valorTela)
+      }
     }
 
     const operation = (op: any) => {
@@ -102,8 +122,14 @@ export const Calc = () => {
     const calculaFV = () => {
       const valorFV = PV * (1+i)**n
       const valorFV2casas = valorFV.toFixed(2)
+      let valorFVString
+      if(!CHS){
+        valorFVString = '-' + valorFV2casas.toString()
+      }else{
+        valorFVString =  valorFV2casas.toString()
+      }
       console.log(valorFV2casas)
-      const valorFVString =  valorFV2casas.toString()
+      
       setValorTela(valorFVString)
     }
 
@@ -177,7 +203,8 @@ export const Calc = () => {
           onClick={calculaFV}
         > FV </button>
         <button
-        style={{ backgroundColor: '#606060', opacity:0.35, cursor: 'no-drop' }}
+          style={{ backgroundColor: '#606060' }}
+          onClick={handleCHS}
         > CHS </button>
         <button
           style={{ backgroundColor: '#606060' }}
