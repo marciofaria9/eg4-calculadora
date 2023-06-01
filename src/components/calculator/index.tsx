@@ -15,16 +15,9 @@ export const Calc = () => {
     
     const addDigitTela = (d: string) => {
 
-      if (['+', '-', '*', '/'].includes(d)) {
-        if (operacao) {
-          setValorTela(`${result}${d}`);
-        } else if (valorTela !== '') {
-          const valorDigitadoTela = `${valorTela}${d}`;
-          setValorTela(valorDigitadoTela);
-        }
-        setOperacao(true);
-      }if (valorTela == '0'){
-          const valorDigitadoTela = `${valorTela}${d}`;
+    if (valorTela == '0'){
+          
+          const valorDigitadoTela = `${d}`;
           setValorTela(valorDigitadoTela);
           setOperacao(false);
       }else{
@@ -82,7 +75,7 @@ export const Calc = () => {
     const populaValor1 = () => {
       const valor1Int = parseInt(valorTela)
       setValor1(valor1Int)
-      setValorTela('')      
+      setValorTela('0')      
       console.log(valor1Int)
     }
 
