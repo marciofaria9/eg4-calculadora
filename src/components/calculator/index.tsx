@@ -10,6 +10,10 @@ export const Calc = () => {
     const [operacao, setOperacao] = useState(false)
     const [valor1, setValor1] = useState(0)
     const [f, setF] = useState(false)
+    const [PV, setPV] = useState(0)
+    const [n, setN] = useState(0)
+    const [i, setI] = useState(0)
+    const [FV, setFV] = useState(0)
 
     const [lastButtonPressed, setLastButtonPressed] = useState('');
     
@@ -46,11 +50,35 @@ export const Calc = () => {
       setResult(0)
       setAcumul(0)
       setValor1(0)
+      setPV(0)
+      setN(0)
+      setI(0)
+      setFV(0)
       setF(false)
       return
     } 
 
+    const populaPV = () =>{
+      const valorPV = parseFloat(valorTela)
+      setPV(valorPV)
+      console.log(valorPV)
+      setValorTela('0') 
+    }
     
+    const populaI = () =>{
+      const valorI = parseFloat(valorTela)/100
+      setI(valorI)
+      console.log(valorI)
+      setValorTela('0') 
+    }
+
+    const populaN = () =>{
+      const valorN = parseFloat(valorTela)
+      setN(valorN)
+      console.log(valorN)
+      setValorTela('0') 
+    }
+
     const operation = (op: any) => {
         //backspace
       if (op == 'bs') {
@@ -70,7 +98,14 @@ export const Calc = () => {
        setResult(parseInt('ERRO'));
       }
     }
-  
+    
+    const calculaFV = () => {
+      const valorFV = PV * (1+i)**n
+      const valorFV2casas = valorFV.toFixed(2)
+      console.log(valorFV2casas)
+      const valorFVString =  valorFV2casas.toString()
+      setValorTela(valorFVString)
+    }
 
     const populaValor1 = () => {
       const valor1Int = parseFloat(valorTela)
@@ -124,18 +159,22 @@ export const Calc = () => {
       </div>
         <button
           style={{ backgroundColor: '#606060' }}
+          onClick={populaN}
           > n </button>
         <button
           style={{ backgroundColor: '#606060' }}
+          onClick={populaI}
         > i </button>
         <button
           style={{ backgroundColor: '#606060' }}
+          onClick={populaPV}
         > PV </button>
         <button
-          style={{ backgroundColor: '#606060' }}
+          style={{ backgroundColor: '#606060', opacity:0.35, cursor: 'no-drop' }}
         > PMT </button>
         <button
           style={{ backgroundColor: '#606060' }}
+          onClick={calculaFV}
         > FV </button>
         <button
         style={{ backgroundColor: '#606060', opacity:0.35, cursor: 'no-drop' }}
