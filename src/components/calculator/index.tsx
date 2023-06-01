@@ -4,7 +4,7 @@ import { useState } from 'react';
 import  './styles.css';
 
 export const Calc = () => {
-    const [valorTela, setValorTela] = useState('')
+    const [valorTela, setValorTela] = useState('0')
     const [result, setResult] = useState(0)
     const [acumul, setAcumul] = useState(0)
     const [operacao, setOperacao] = useState(false)
@@ -23,7 +23,11 @@ export const Calc = () => {
           setValorTela(valorDigitadoTela);
         }
         setOperacao(true);
-      } else {
+      }if (valorTela == '0'){
+          const valorDigitadoTela = `${valorTela}${d}`;
+          setValorTela(valorDigitadoTela);
+          setOperacao(false);
+      }else{
         const valorDigitadoTela = `${valorTela}${d}`;
         setValorTela(valorDigitadoTela);
         setOperacao(false);
@@ -39,13 +43,13 @@ export const Calc = () => {
       if (f){
         limparMemor()
       }else{
-        setValorTela('')
+        setValorTela('0')
       }
     }
 
     const limparMemor = () => {
       setOperacao(false)
-      setValorTela('')
+      setValorTela('0')
       setResult(0)
       setAcumul(0)
       setValor1(0)
