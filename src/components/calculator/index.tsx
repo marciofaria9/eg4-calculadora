@@ -132,13 +132,13 @@ export const Calc = () => {
           style={{ backgroundColor: '#606060' }}
         > PV </button>
         <button
-          style={{ backgroundColor: '#606060' }}
+          style={{ backgroundColor: '#606060', opacity:0.35, cursor: 'no-drop' }}
         > PMT </button>
         <button
           style={{ backgroundColor: '#606060' }}
         > FV </button>
         <button
-        style={{ backgroundColor: '#606060' }}
+        style={{ backgroundColor: '#606060', opacity:0.35, cursor: 'no-drop' }}
         > CHS </button>
         <button
           style={{ backgroundColor: '#606060' }}
@@ -159,22 +159,22 @@ export const Calc = () => {
       
 
         <button
-          style={{ backgroundColor: '#606060' }}
+          style={{ backgroundColor: '#606060' , opacity:0.35, cursor: 'no-drop'}}
         > Y^x </button>
         <button
-          style={{ backgroundColor: '#606060' }}
+          style={{ backgroundColor: '#606060', opacity:0.35, cursor: 'no-drop' }}
         > 1/x </button>
         <button
-          style={{ backgroundColor: '#606060' }}
+          style={{ backgroundColor: '#606060', opacity:0.35, cursor: 'no-drop' }}
         > %T </button>
         <button
-          style={{ backgroundColor: '#606060' }}
+          style={{ backgroundColor: '#606060', opacity:0.35, cursor: 'no-drop' }}
         > Δ% </button>
         <button
-          style={{ backgroundColor: '#606060' }}
+          style={{ backgroundColor: '#606060', opacity:0.35, cursor: 'no-drop' }}
         > % </button>
         <button
-          style={{ backgroundColor: '#606060' }}
+          style={{ backgroundColor: '#606060', opacity:0.35, cursor: 'no-drop' }}
         > EEX </button>
         <button 
           style={{ backgroundColor: '#606060' }}
@@ -195,16 +195,16 @@ export const Calc = () => {
 
 
         <button
-          style={{ backgroundColor: '#606060' }}
+          style={{ backgroundColor: '#606060', opacity:0.35, cursor: 'no-drop' }}
         > R/S </button>
         <button
-          style={{ backgroundColor: '#606060' }}
+          style={{ backgroundColor: '#606060', opacity:0.35, cursor: 'no-drop'}}
         > SST </button>
         <button
-          style={{ backgroundColor: '#606060' }}
+          style={{ backgroundColor: '#606060', opacity:0.35, cursor: 'no-drop' }}
         > R∇ </button>
         <button
-          style={{ backgroundColor: '#606060' }}
+          style={{ backgroundColor: '#606060', opacity:0.35, cursor: 'no-drop' }}
         > x y </button>
        <button
         style={{ backgroundColor: '#BD5757' }}
@@ -241,7 +241,7 @@ export const Calc = () => {
 
         
         <button
-          style={{ backgroundColor: '#606060' }}
+          style={{ backgroundColor: '#606060', opacity:0.35, cursor: 'no-drop' }}
         > ON </button>
          <button
         style={{ backgroundColor: '#F77F43' }}
@@ -250,13 +250,13 @@ export const Calc = () => {
         f
       </button>
         <button
-          style={{ backgroundColor: '#5B51E6' }}
+          style={{ backgroundColor: '#5B51E6', opacity:0.35, cursor: 'no-drop' }}
         > g </button>
         <button
-          style={{ backgroundColor: '#606060' }}
+          style={{ backgroundColor: '#606060', opacity:0.35, cursor: 'no-drop' }}
         > STO </button>
         <button
-          style={{ backgroundColor: '#606060' }}
+          style={{ backgroundColor: '#606060', opacity:0.35, cursor: 'no-drop' }}
         > RCL </button>
         <button 
           style={{ backgroundColor: '#606060' }}
