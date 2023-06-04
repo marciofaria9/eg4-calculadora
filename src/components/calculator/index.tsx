@@ -309,12 +309,12 @@ export const Calc = () => {
         <button
           style={{ backgroundColor: '#606060', opacity:0.35, cursor: 'no-drop' }}
         > ON </button>
-         <button
-        style={{ backgroundColor: '#F77F43' }}
-        onClick={handleF}
-      >
-        f
-      </button>
+        <button
+    style={{ backgroundColor: f ? '#8C3C1E' : '#F77F43' }}
+    onClick={handleF}
+  >
+    f
+  </button>
         <button
           style={{ backgroundColor: '#5B51E6', opacity:0.35, cursor: 'no-drop' }}
         > g </button>
